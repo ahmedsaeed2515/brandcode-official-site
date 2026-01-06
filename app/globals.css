@@ -1,0 +1,114 @@
+@import "tailwindcss";
+
+/* ============================================
+   BrandCode Design System
+   ============================================ */
+
+@theme {
+  /* Colors */
+  --color-background: #050510;
+  --color-foreground: #ffffff;
+  --color-primary: #6366f1;
+  --color-primary-glow: rgba(99, 102, 241, 0.4);
+  --color-secondary: #f97316;
+  --color-secondary-glow: rgba(249, 115, 22, 0.4);
+  --color-accent: #ec4899;
+  --color-muted: #71717a;
+  --color-glass: rgba(255, 255, 255, 0.05);
+  --color-glass-border: rgba(255, 255, 255, 0.1);
+  
+  /* Fonts */
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+}
+
+/* ============================================
+   Base Styles
+   ============================================ */
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* ============================================
+   Custom Scrollbar
+   ============================================ */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* ============================================
+   Utility Classes
+   ============================================ */
+
+.glass {
+  background: var(--color-glass);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--color-glass-border);
+}
+
+.glow-primary {
+  box-shadow: 0 0 30px var(--color-primary-glow),
+              0 0 60px var(--color-primary-glow);
+}
+
+.glow-secondary {
+  box-shadow: 0 0 30px var(--color-secondary-glow),
+              0 0 60px var(--color-secondary-glow);
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, #fff 0%, #a5a6f6 50%, #6366f1 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ============================================
+   Animation Keyframes
+   ============================================ */
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
